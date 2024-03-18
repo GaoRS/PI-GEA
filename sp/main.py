@@ -42,7 +42,7 @@ def setup_seed(seed):
     np.random.seed(seed)
     random.seed(seed)
     torch.backends.cudnn.deterministic = True
-seed = 111
+# seed = 111
 setup_seed(seed)
 
 def train_loader(dataset, batch_num):
@@ -203,8 +203,8 @@ dataset = MyDataset(train_data, train_coor)
 train_loader = train_loader(dataset, args.batch_val)
 
 # define models
-nblock = 2  # 3 blocks = 4 hidden layers
-width = 64
+nblock = 3  # 3 blocks = 4 hidden layers
+width = 128
 ##非高斯分布：0.2:3×128 + 3×64    0.5 and 1： 3×60 单sigmoid
 ##高斯分布： 3×60 单sigmoid 特征值很好
 enc = Encoder(args.latent_dim, args.f_sensor, nblock, 64, device)
