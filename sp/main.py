@@ -189,7 +189,7 @@ def train(train_loader, enc, gen, optimizer_enc, optimizer_gen):
 
 
 ##加载数据
-cl = 0.2
+cl = 1
 test_data = np.load(f'square_exp//6sensor,l={cl}.npy')[0: args.data_size]  ##(1000, 101)
 test_coor = np.linspace(-1, 1, args.num_p) * np.ones([args.data_size, args.num_p])  ##(1000, 101)
 index = np.floor(np.linspace(0, 1, args.f_sensor) * (args.num_p-1)).astype(int)
